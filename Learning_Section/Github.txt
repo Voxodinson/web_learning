@@ -1,0 +1,23 @@
+
+
+[+++]----------------+---------------[ Github ]----------------+---------------[+++]
+
+//Clone Project 
+
+git clone https://github.com/Voxodinson/
+
+//Install Dependencies
+
+npm install
+
+//Create Branch
+
+git checkout -b Branch_name
+
+//git add commit and push
+
+git add .
+
+git commit -m 'Update what you do on today'
+
+git push
