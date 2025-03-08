@@ -4,7 +4,7 @@
 //Data Types Section -------------------------------
 
     _ var (can be declare in block scope and access from outside)
-    _ let
+    _ let 
     _ const
 
     //Objects-------------------------------
@@ -15,7 +15,6 @@
     };
 
 console.log('Hello' + person.name + ',' + 'I am' + person.age)
-
 
     //Array-------------------------------
 
@@ -138,7 +137,7 @@ console.log('Hello' + person.name + ',' + 'I am' + person.age)
     }
     let total = name(10, 10);
 
-    4. Function Expression (Anonymous Function)----------------------------
+4. Function Expression (Anonymous Function)----------------------------
 
     const hello = function(name){
         console.log('Hello Im' + name + '!');
@@ -168,6 +167,13 @@ console.log('Hello' + person.name + ',' + 'I am' + person.age)
 
     greet();            //can be null or empty
     greet("Emma");      //give new value
+
+
+
+
+
+
+
 
 7. Rest Parameters----------------------------
 
@@ -339,3 +345,39 @@ console.log('Hello' + person.name + ',' + 'I am' + person.age)
         .then(result => console.log(result))  // "Operation successful!"
         .catch(error => console.log(error));  // "Operation failed."
 
+
+
+
+
+[+++]----------------+---------------[ Javascript DOM ]----------------+---------------[+++]
+
+JavaScript DOM (Document Object Model) is a programming interface that allows you to interact with and 
+manipulate HTML and CSS using JavaScript. Here are some key aspects of the DOM:
+
+//Selecting Elements------------------------------
+
+    // Select by ID
+    let element = document.getElementById("myId");
+
+    // Select by class name
+    let elements = document.getElementsByClassName("myClass");
+
+    // Select by tag name
+    let elements = document.getElementsByTagName("div");
+
+    // Select with querySelector (first match)
+    let element = document.querySelector(".myClass");
+
+    // Select with querySelectorAll (all matches)
+    let elements = document.querySelectorAll(".myClass");
+
+//Modifying Elements------------------------------
+
+    // Change inner text
+    element.textContent = "New text";
+
+    // Change inner HTML
+    element.innerHTML = "<b>Bold text</b>";
+
+    // Change a style
+    element.style.color = "red";
