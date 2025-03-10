@@ -4,10 +4,11 @@
 //Data Types Section -------------------------------
 
     _ var (can be declare in block scope and access from outside)
-    _ let
-    _ const
+    _ let //can reassign new value 
+    _ const  //can't reassign new value
 
-    //Objects-------------------------------
+
+//Objects-------------------------------
 
     const person = {
         name: "Alice",
@@ -15,7 +16,6 @@
     };
 
 console.log('Hello' + person.name + ',' + 'I am' + person.age)
-
 
     //Array-------------------------------
 
@@ -138,7 +138,7 @@ console.log('Hello' + person.name + ',' + 'I am' + person.age)
     }
     let total = name(10, 10);
 
-    4. Function Expression (Anonymous Function)----------------------------
+4. Function Expression (Anonymous Function)----------------------------
 
     const hello = function(name){
         console.log('Hello Im' + name + '!');
@@ -168,6 +168,59 @@ console.log('Hello' + person.name + ',' + 'I am' + person.age)
 
     greet();            //can be null or empty
     greet("Emma");      //give new value
+
+//async--------------------------
+    //how async function work
+        Start
+        Processing...
+        End
+
+    async function fetchUsers() {
+        let response = await fetch("-----");
+        let users = await response.json();
+        console.log(users);
+    }
+
+    //Promise -------------------------------
+
+    1. ស្ថានភាព (States) របស់ Promise
+        Promise មាន ៣ ស្ថានភាពចម្បង៖
+        ✅ Pending - កំពុងរង់ចាំ
+        ✅ Fulfilled - បានជោគជ័យ
+        ✅ Rejected - បរាជ័យ
+
+    let promise = new Promise((resolve, reject) => {
+        let success = true;
+        
+        if (success) {
+            resolve("Operation successful!");
+        } else {
+            reject("Operation failed.");
+        }
+    });
+
+
+//await----------------------
+
+    function fetchData() {
+        return new Promise((resolve) => {
+            setTimeout(() => resolve("✅ Data Loaded!"), 2000);
+        });
+    }
+
+    async function getData() {
+        console.log("Fetching...");
+        let data = await fetchData();
+        console.log(data);
+    }
+
+    getData();
+
+
+
+fetchUsers();
+
+
 
 7. Rest Parameters----------------------------
 
@@ -202,6 +255,7 @@ console.log('Hello' + person.name + ',' + 'I am' + person.age)
         } else {
             console.log("You are too young to vote.");
         }
+        
     3. if...else if...else Statement
         let score = 85;
 
@@ -322,20 +376,35 @@ console.log('Hello' + person.name + ',' + 'I am' + person.age)
 
         greet('Voxodinson');
 
+[+++]----------------+---------------[ Javascript DOM ]----------------+---------------[+++]
 
-//Promise -------------------------------
+JavaScript DOM (Document Object Model) is a programming interface that allows you to interact with and 
+manipulate HTML and CSS using JavaScript. Here are some key aspects of the DOM:
 
-    let promise = new Promise((resolve, reject) => {
-        let success = true;
-        
-        if (success) {
-            resolve("Operation successful!");
-        } else {
-            reject("Operation failed.");
-        }
-    });
+//Selecting Elements------------------------------
 
-    promise
-        .then(result => console.log(result))  // "Operation successful!"
-        .catch(error => console.log(error));  // "Operation failed."
+    // Select by ID
+    let element = document.getElementById("myId");
 
+    // Select by class name
+    let elements = document.getElementsByClassName("myClass");
+
+    // Select by tag name
+    let elements = document.getElementsByTagName("div");
+
+    // Select with querySelector (first match)
+    let element = document.querySelector(".myClass");
+
+    // Select with querySelectorAll (all matches)
+    let elements = document.querySelectorAll(".myClass");
+
+//Modifying Elements------------------------------
+
+    // Change inner text
+    element.textContent = "New text";
+
+    // Change inner HTML
+    element.innerHTML = "<b>Bold text</b>";
+
+    // Change a style
+    element.style.color = "red";
