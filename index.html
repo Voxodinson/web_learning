@@ -7,38 +7,32 @@
   <link href="src/output.css" rel="stylesheet">
 
 </head>
-
 <body>
-  <div class="w-full h-[60px] shadow-md flex justify-around items-center" id="container">
-    <div class="">
-      <h3 class=" font-bold uppercase text-blue-400 text-[2rem]">Logo</h3>
+    <div class="w-full h-[60px] shadow-md flex justify-around items-center" id="container">
+        <div class="">
+            <h3 class=" font-bold uppercase text-blue-400 text-[2rem]">Logo</h3>
+        </div>
+        
+        <ul class=" hidden md:flex">
+          <li class="py-1 px-4 rounded-full bg-blue-400 text-white">
+            <a href="">Home</a>
+          </li>
+          <li class="py-1 px-4 rounded-full">
+            <a href="">Features</a>
+          </li>
+          <li class="py-1 px-4 rounded-full">
+            <a href="">Block</a>
+          </li>
+          <li class="py-1 px-4 rounded-full">
+            <a href="">Shop</a>
+          </li>
+        </ul>
+        
+        <button class="block md:hidden py-1 px-4 rounded-full border-[1px] border-gray-200">open</button>
     </div>
+    
+    <script type="module" src="index.js"></script>
 
-    <ul class=" hidden md:flex">
-      <li class="py-1 px-4 rounded-full bg-blue-400 text-white">
-        <a href="">Home</a>
-      </li>
-      <li class="py-1 px-4 rounded-full">
-        <a href="">Features</a>
-      </li>
-      <li class="py-1 px-4 rounded-full">
-        <a href="">Block</a>
-      </li>
-      <li class="py-1 px-4 rounded-full">
-        <a href="">Shop</a>
-      </li>
-    </ul>
-
-    <button class="block md:hidden py-1 px-4 rounded-full border-[1px] border-gray-200">open</button>
-
-    <h1>Hello</h1>
-    <h1>Hello2</h1>
-    <h1>Hello guy</h1>
-    <h1>Hello guy</h1>
-    <h2>hello</h2>
-  </div>
-  <script type="module" src="index.js"></script>
-  <script type="module" src="module.js"></script>
 </body>
 
 </html>
