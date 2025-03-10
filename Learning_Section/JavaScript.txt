@@ -360,21 +360,7 @@ fetchUsers();
 
     console.log(combinedObj);
 
-
-//Modules (Export and Import) -------------------------------
-
-    // person.js
-        export function greet(name) {
-            console.log("Hello, " + name);
-        }
-
-    // main.js
-        import { 
-            name, 
-            greet 
-        } from './person.js';
-
-        greet('Voxodinson');
+g
 
 [+++]----------------+---------------[ Javascript DOM ]----------------+---------------[+++]
 
@@ -383,28 +369,66 @@ manipulate HTML and CSS using JavaScript. Here are some key aspects of the DOM:
 
 //Selecting Elements------------------------------
 
-    // Select by ID
-    let element = document.getElementById("myId");
+// 7 common JavaScript dom-------------------------------
 
-    // Select by class name
-    let elements = document.getElementsByClassName("myClass");
+    //Selects an element by ID
+        document.getElementById(id)	
 
-    // Select by tag name
-    let elements = document.getElementsByTagName("div");
+    //Selects elements by class name
+        document.getElementsByClassName(className)	
 
-    // Select with querySelector (first match)
-    let element = document.querySelector(".myClass");
+    //Selects elements by tag name
+        document.getElementsByTagName(tagName)
 
-    // Select with querySelectorAll (all matches)
-    let elements = document.querySelectorAll(".myClass");
+    //Selects the first matching element	
+        document.querySelector(selector)	
 
-//Modifying Elements------------------------------
+    Selects all matching elements
+        document.querySelectorAll(selector)	
 
-    // Change inner text
-    element.textContent = "New text";
+    //Sets/gets HTML content
+        element.innerHTML	
 
-    // Change inner HTML
-    element.innerHTML = "<b>Bold text</b>";
+    //Sets/gets text content
+        element.textContent	
+    //Sets an attribute
+        element.setAttribute(name, value)
 
-    // Change a style
-    element.style.color = "red";
+    //Gets an attribute
+        element.getAttribute(name)	
+
+    /Modifies inline styles
+        element.style.property	
+
+    //Adds an event listener
+        element.addEventListener(event, function)	
+
+    //Removes an event listener
+        element.removeEventListener(event, function)
+
+    /Creates a new element
+        document.createElement(tagName)	
+
+    //Appends a child element
+        parent.appendChild(child)	
+
+    //Removes a child element
+        parent.removeChild(child)
+
+
+//Example---------
+
+    document.getElementById("button").addEventListener("click", function(event) {
+        alert('You are clicked button...!');
+    });
+
+
+//toggle background---------
+
+    document.getElementById("toggleMode").addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+    });
+
+    <style>
+        .dark-mode { background-color: black; color: white; }
+    </style>
