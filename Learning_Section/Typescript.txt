@@ -1,0 +1,136 @@
+// [++]----------------+---------------[ Javascript ]----------------+---------------[++]
+
+TypeScript framework that build on top of JavaScript
+
+// Basic Types
+    let numberVar: number = 10;
+    let stringVar: string = "Hello, TypeScript!";
+    let booleanVar: boolean = true;
+    let items: number[] = [1, 2, 3]; // Array of numbers
+    let user: { name: string, age: number } = { name: "John", age: 25 }; // Object type
+
+// Union Types
+    type Status = "bad" | "good" | "perfect";
+    let currentStatus: Status = "good"; // Only "bad", "good", or "perfect"
+
+// Interface
+    interface Person {
+        name: string;
+        age: number;
+        greet: () => void;
+    }
+
+    const user1: Person = {
+        name: "John",
+        age: 25,
+        greet: () => {
+            console.log("Hello!");
+        },
+    };
+
+// Generics
+    function genericFunction<T>(value: T): T {
+        return value;
+    }
+
+    let output = genericFunction<string>("Hello world");
+    let numberOutput = genericFunction<number>(123);
+
+// Type Aliases for Objects
+    type Car = {
+        make: string;
+        model: string;
+        year: number;
+    };
+
+    const myCar: Car = {
+        make: "Toyota",
+        model: "Corolla",
+        year: 2020,
+    };
+
+// Optional Properties
+    interface Product {
+        id: number;
+        name: string;
+        price?: number; // Optional property
+    }
+
+const product1: Product = { id: 1, name: "Laptop" };
+
+// Readonly Properties
+    interface ReadOnlyProduct {
+        readonly id: number;
+        name: string;
+    }
+
+    const readOnlyProduct: ReadOnlyProduct = { id: 1, name: "Phone" };
+    // readOnlyProduct.id = 2; // Error: Cannot assign to 'id' because it is a read-only property.
+
+
+// Enums
+    enum StatusEnum {
+        Pending,
+        InProgress,
+        Completed,
+    }
+
+    const taskStatus: StatusEnum = StatusEnum.InProgress; // 1
+
+// Tuple Types
+    let tuple: [string, number] = ["John", 25];
+
+// Type Assertions
+    let someValue: any = "Hello, world!";
+    let strLength: number = (someValue as string).length; // Using 'as'
+
+// Type Guards
+    function isString(value: any): value is string {
+        return typeof value === "string";
+    }
+
+    let value: any = "Hello, world!";
+    if (isString(value)) {
+        console.log(value.length); // Now TypeScript knows 'value' is a string
+    }
+
+// Union Types with Type Guards
+    type StatusUnion = "active" | "inactive";
+
+    function printStatus(status: StatusUnion): void {
+        if (status === "active") {
+            console.log("User is active");
+        } else {
+            console.log("User is inactive");
+        }
+    }
+
+// Intersection Types
+    type Name = { name: string };
+    type Age = { age: number };
+
+    type PersonWithDetails = Name & Age;
+
+    const personWithDetails: PersonWithDetails = {
+        name: "Alice",
+        age: 30,
+    };
+
+// Conditional Types
+    type IsString<T> = T extends string ? "Yes" : "No";
+
+    type Test1 = IsString<string>;  // "Yes"
+    type Test2 = IsString<number>;  // "No"
+
+// Generic Classes
+    class Box<T> {
+        value: T;
+        constructor(value: T) {
+            this.value = value;
+        }
+    }
+
+const stringBox = new Box("Hello");
+const numberBox = new Box(123);
+
+// [++]----------------+---------------[ Javascript ]----------------+---------------[++]
