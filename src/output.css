@@ -6,9 +6,13 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-100: oklch(0.936 0.032 17.717);
+    --color-red-300: oklch(0.808 0.114 19.571);
     --color-red-500: oklch(0.637 0.237 25.331);
+    --color-blue-300: oklch(0.809 0.105 251.813);
     --color-blue-400: oklch(0.707 0.165 254.624);
     --color-violet-700: oklch(0.491 0.27 292.581);
+    --color-pink-400: oklch(0.718 0.202 349.761);
     --color-slate-500: oklch(0.554 0.046 257.417);
     --color-slate-900: oklch(0.208 0.042 265.755);
     --color-gray-50: oklch(0.985 0.002 247.839);
@@ -358,6 +362,9 @@
       max-width: 96rem !important;
     }
   }
+  .my-8 {
+    margin-block: calc(var(--spacing) * 8);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -460,11 +467,14 @@
   .h-\[60px\] {
     height: 60px;
   }
-  .h-\[100px\] {
-    height: 100px;
-  }
   .h-\[100vh\] {
     height: 100vh;
+  }
+  .h-\[120px\] {
+    height: 120px;
+  }
+  .h-\[130px\] {
+    height: 130px;
   }
   .h-\[180px\] {
     height: 180px;
@@ -493,8 +503,11 @@
   .w-4 {
     width: calc(var(--spacing) * 4);
   }
-  .w-\[100px\] {
-    width: 100px;
+  .w-\[120px\] {
+    width: 120px;
+  }
+  .w-\[130px\] {
+    width: 130px;
   }
   .w-\[180px\] {
     width: 180px;
@@ -1379,6 +1392,9 @@
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
   .text-center {
     text-align: center;
   }
@@ -2016,6 +2032,27 @@
       }
     }
   }
+  .group-hover\:bg-pink-400 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        background-color: var(--color-pink-400);
+      }
+    }
+  }
+  .group-hover\:bg-red-100 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        background-color: var(--color-red-100);
+      }
+    }
+  }
+  .group-hover\:bg-red-300 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        background-color: var(--color-red-300);
+      }
+    }
+  }
   .group-hover\:text-white {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -2030,6 +2067,13 @@
         --tw-scale-y: 110%;
         --tw-scale-z: 110%;
         scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:bg-blue-300 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blue-300);
       }
     }
   }
