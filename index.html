@@ -1,38 +1,68 @@
-<!doctype html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="src/output.css" rel="stylesheet">
-
+  <style>
+    /* Custom styles for smooth transition */
+    #menu {
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
 </head>
 <body>
-    <div class="w-full h-[60px] shadow-md flex justify-around items-center" id="container">
+    <div class="w-full h-[60px] relative shadow-md flex justify-around items-center" id="container">
         <div class="">
-            <h3 class=" font-bold uppercase text-blue-400 text-[2rem]">Logo</h3>
+            <h3 class="font-bold uppercase text-blue-400 text-[2rem]">Logo</h3>
         </div>
         
-        <ul class=" hidden md:flex">
-          <li class="py-1 px-4 rounded-full bg-blue-400 text-white">
-            <a href="">Home</a>
-          </li>
-          <li class="py-1 px-4 rounded-full">
-            <a href="">Features</a>
-          </li>
-          <li class="py-1 px-4 rounded-full">
-            <a href="">Block</a>
-          </li>
-          <li class="py-1 px-4 rounded-full">
-            <a href="">Shop</a>
-          </li>
+        <!-- Navigation Links (for larger screens) -->
+        <ul class="hidden md:flex space-x-4">
+            <li class="py-1 px-4 rounded-full bg-blue-400 text-white">
+                <a href="#">Home</a>
+            </li>
+            <li class="py-1 px-4 rounded-full">
+                <a href="#">Features</a>
+            </li>
+            <li class="py-1 px-4 rounded-full">
+                <a href="#">Block</a>
+            </li>
+            <li class="py-1 px-4 rounded-full">
+                <a href="#">Shop</a>
+            </li>
         </ul>
         
-        <button class="block md:hidden py-1 px-4 rounded-full border-[1px] border-gray-200">open</button>
+        <!-- dropdown menu for mobile screen -->
+        <ul id="menu" class="md:hidden hidden absolute top-[60px] left-0 w-full flex-col items-center space-y-4 bg-gray-800 py-6">
+            <li class="py-1 px-4 rounded-full bg-blue-400 text-white">
+                <a href="#">Home</a>
+            </li>
+            <li class="py-1 px-4 rounded-full">
+                <a href="#">Features</a>
+            </li>
+            <li class="py-1 px-4 rounded-full">
+                <a href="#">Block</a>
+            </li>
+            <li class="py-1 px-4 rounded-full">
+                <a href="#">Shop</a>
+            </li>
+        </ul>
+
+        <button id="menuToggle" class="block md:hidden text-[1.8rem]">
+            &#9776;
+        </button>
+=
     </div>
+
+    <script type="module">
+        const menuToggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('menu');
     
-    <script type="module" src="index.js"></script>
-
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+    </script>
+    <script lang="ts" src="typescript.ts"></script>
 </body>
-
 </html>

@@ -222,4 +222,4 @@ console.log(combinedObj);
 
 
 
-
+//DOM in javascript---------

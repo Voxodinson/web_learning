@@ -376,14 +376,14 @@ manipulate HTML and CSS using JavaScript. Here are some key aspects of the DOM:
 
     //Selects elements by class name
         document.getElementsByClassName(className)	
-
+        
     //Selects elements by tag name
         document.getElementsByTagName(tagName)
 
     //Selects the first matching element	
         document.querySelector(selector)	
 
-    Selects all matching elements
+    //Selects all matching elements
         document.querySelectorAll(selector)	
 
     //Sets/gets HTML content
@@ -391,6 +391,7 @@ manipulate HTML and CSS using JavaScript. Here are some key aspects of the DOM:
 
     //Sets/gets text content
         element.textContent	
+
     //Sets an attribute
         element.setAttribute(name, value)
 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>DOM Javscript</title>
+
+    <style>
+        .newTitle {
+            color: aqua;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">This Title</h1>
+
+    <p class="paragraph">1--Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, fuga itaque totam temporibus quisquam tempora atque fugit! Mollitia, perferendis dolor nihil blanditiis sapiente voluptatem error magni qui et, rerum rem.</p>
+    <p class="paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, fuga itaque totam temporibus quisquam tempora atque fugit! Mollitia, perferendis dolor nihil blanditiis sapiente voluptatem error magni qui et, rerum rem.</p>
+    <p class="paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, fuga itaque totam temporibus quisquam tempora atque fugit! Mollitia, perferendis dolor nihil blanditiis sapiente voluptatem error magni qui et, rerum rem.</p>
+
+
+    <span>Get by Tag</span><br>
+    <span>Get by Tag</span><br>
+    <span>Get by Tag</span>
+
+
+    <h3 id="TContent">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, non! <span class="hidden">Text Content</span></h3>
+
+
+    <button 
+        id="btn"
+        class="py-2 px-6 rounded-md bg-blue-400">Change tittle</button>
+
+    
+    <ul id="list">
+        <li>Original List Item</li>
+    </ul>   
+
+    <div class="">
+        <button id="btnAdd" class="py-2 px-6 rounded-md bg-blue-400">Add</button>
+        <button id="btnRemove" class="py-2 px-6 rounded-md bg-red-500">Remove</button>
+    </div>
+    <script>
+        const title = document.getElementById("title");
+        // title.style.color = "blue"
+        // title.innerHTML = "Updtae title";
+        // console.log(title.innerHTML)
+
+
+        title.setAttribute("class", "newTitle");
+
+        console.log("Get Class title :", title.getAttribute("class"))
+
+
+        const paragraph = document.getElementsByClassName("paragraph")[0]; //get element by array
+        paragraph.style.color = "pink";
+
+        const tags = document.getElementsByTagName("span");
+        tags[1].style.color = "blue";
+
+        const qeurySelector = document.querySelector(".paragraph");//get first element when check = (".paragraph")
+        //console.log("query selector", qeurySelector.textContent);
+
+        const querySelectorAll = document.querySelectorAll(".paragraph");//get all element when check = (".paragraph")
+        querySelectorAll.forEach(e => {
+            e.style.color = "green";
+        });
+        console.log("query selector", querySelectorAll);
+
+        const text = document.getElementById("TContent");
+        console.log("textContent :", text.textContent);
+        console.log("innerText :", text.innerText);
+
+        
+        const button = document.getElementById("btn");
+
+        button.addEventListener('click', function(){
+            title.innerText = "New Title Add";
+        })
+
+
+        const newEle = document.createElement("h3");
+        newEle.innerText = "this is new element";
+        //document.body.appendChild(newEle);
+
+        
+        document.getElementById("btnAdd").addEventListener('click', function(){
+            let newItem = document.createElement("li");
+            newItem.textContent = 'This is new item';
+            document.getElementById("list").appendChild(newItem);
+        });
+
+        document.getElementById("btnRemove").addEventListener('click', function(){
+            const list = document.getElementById("list");
+            if(list.children.length > 1){
+                list.removeChild(list.lastElementChild);
+            }else{
+                alert("Can't remove original item");
+            }
+        });
+
+    </script>
+</body>
+</html>
